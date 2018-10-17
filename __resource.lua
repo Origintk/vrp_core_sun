@@ -1,14 +1,14 @@
 
-description "vRP core sun"
+--description "vRP core sun"
 
-dependency "vrp"
+--dependency "vrp"
 
 client_scripts{ 
- "@vrp/lib/utils.lua",
+ --"@vrp/lib/utils.lua",
   "client.lua"
 }
 
 server_scripts{ 
-  "@vrp/lib/utils.lua",
+ -- "@vrp/lib/utils.lua",
   "server.lua"
 }
