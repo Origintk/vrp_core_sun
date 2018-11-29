@@ -31,6 +31,32 @@ Citizen.CreateThread(function()
 end
 end)
 
+Citizen.CreateThread(function()
+  while true do
+      Citizen.Wait(0)
+      if IsControlJustPressed(1, 244) then
+            local player = GetPlayerPed( -1 )
+            loadAnimDict( "random@arrests" )
+            loadAnimDict( "random@arrests@busted" )
+            if not sun_mao then
+                TaskPlayAnim( player, "random@arrests@busted", "exit", 8.0, 1.0, -1, 2, 0, 0, 0, 0 )
+                Wait (3000)
+                TaskPlayAnim( player, "random@arrests", "kneeling_arrest_get_up", 8.0, 1.0, -1, 128, 0, 0, 0, 0 )
+                sun_mao = true
+            else
+                sun_mao = false
+                TaskPlayAnim( player, "random@arrests", "idle_2_hands_up", 8.0, 1.0, -1, 2, 0, 0, 0, 0 )
+                Wait (4000)
+                TaskPlayAnim( player, "random@arrests", "kneeling_arrest_idle", 8.0, 1.0, -1, 2, 0, 0, 0, 0 )
+                Wait (500)
+                TaskPlayAnim( player, "random@arrests@busted", "enter", 8.0, 1.0, -1, 2, 0, 0, 0, 0 )
+                Wait (1000)
+                TaskPlayAnim( player, "random@arrests@busted", "idle_a", 8.0, 1.0, -1, 9, 0, 0, 0, 0 )
+        end
+    end
+end
+end)
+
 
 Citizen.CreateThread(function()
   while true do
