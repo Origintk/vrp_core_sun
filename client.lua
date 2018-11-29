@@ -34,7 +34,7 @@ end)
 Citizen.CreateThread(function()
   while true do
       Citizen.Wait(0)
-      if IsControlJustPressed(1, 244) then
+      if IsControlJustPressed(1, 244) then -- Ajoelhar M
             local player = GetPlayerPed( -1 )
             loadAnimDict( "random@arrests" )
             loadAnimDict( "random@arrests@busted" )
